@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cocoindex-text-embedding-milvus"
+version = "0.1.0"
+description = "Text embedding example using Milvus vector database"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "CocoIndex Contributors", email = "info@cocoindex.io"},
+]
+
+dependencies = [
+    "cocoindex",
+    "pymilvus>=2.4.0",  
+    "sentence-transformers>=3.3.1",  
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.0",
+    "pytest-asyncio>=1.1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["main.py"]
